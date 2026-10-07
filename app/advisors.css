@@ -1,0 +1,1755 @@
+/* ============================================================
+   BEXKA — DIRECT ADVISORS
+============================================================ */
+
+/* ============================================================
+   SELECTOR DE ADVISORS
+============================================================ */
+
+.advisor-selector-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 245px;
+
+  padding: 30px;
+
+  justify-content: center;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.advisor-selector-card:hover {
+  transform:
+    translateY(-6px)
+    scale(1.006);
+}
+
+.advisor-selector-purple {
+  border-color:
+    rgba(170, 118, 255, 0.22);
+}
+
+.advisor-selector-pink {
+  border-color:
+    rgba(211, 108, 255, 0.2);
+}
+
+.advisor-selector-blue {
+  border-color:
+    rgba(81, 142, 255, 0.22);
+}
+
+.advisor-selector-cyan {
+  border-color:
+    rgba(86, 208, 255, 0.2);
+}
+
+.advisor-selector-purple:hover {
+  border-color:
+    rgba(184, 139, 255, 0.55);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.3),
+    0 0 45px
+    rgba(142, 81, 255, 0.12);
+}
+
+.advisor-selector-pink:hover {
+  border-color:
+    rgba(220, 137, 255, 0.52);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.3),
+    0 0 45px
+    rgba(207, 89, 255, 0.11);
+}
+
+.advisor-selector-blue:hover {
+  border-color:
+    rgba(101, 171, 255, 0.55);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.3),
+    0 0 45px
+    rgba(61, 133, 255, 0.11);
+}
+
+.advisor-selector-cyan:hover {
+  border-color:
+    rgba(105, 221, 255, 0.52);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.3),
+    0 0 45px
+    rgba(69, 200, 255, 0.1);
+}
+
+.advisor-selector-light {
+  position: absolute;
+
+  width: 270px;
+  height: 230px;
+
+  top: -150px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  filter: blur(55px);
+
+  opacity: 0.28;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.advisor-selector-card:hover
+.advisor-selector-light {
+  opacity: 0.58;
+
+  transform: scale(1.12);
+}
+
+.advisor-selector-light-purple {
+  background: #9855ff;
+}
+
+.advisor-selector-light-pink {
+  background: #cb54ff;
+}
+
+.advisor-selector-light-blue {
+  background: #4383ff;
+}
+
+.advisor-selector-light-cyan {
+  background: #47cfff;
+}
+
+.advisor-selector-mark {
+  position: absolute;
+
+  top: 24px;
+  right: 25px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  z-index: 4;
+}
+
+.advisor-selector-mark-purple {
+  color: #dbc7ff;
+
+  border:
+    1px solid
+    rgba(174, 132, 255, 0.15);
+
+  background:
+    rgba(136, 79, 255, 0.09);
+}
+
+.advisor-selector-mark-pink {
+  color: #efc9ff;
+
+  border:
+    1px solid
+    rgba(211, 128, 255, 0.14);
+
+  background:
+    rgba(190, 77, 255, 0.08);
+}
+
+.advisor-selector-mark-blue {
+  color: #c7dcff;
+
+  border:
+    1px solid
+    rgba(99, 161, 255, 0.14);
+
+  background:
+    rgba(65, 125, 255, 0.08);
+}
+
+.advisor-selector-mark-cyan {
+  color: #c6f4ff;
+
+  border:
+    1px solid
+    rgba(94, 215, 255, 0.14);
+
+  background:
+    rgba(66, 189, 255, 0.07);
+}
+
+.advisor-selector-card
+.advisor-area {
+  position: relative;
+
+  z-index: 3;
+
+  font-size: 9px;
+}
+
+.advisor-selector-card h3 {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 11px;
+
+  font-size: 27px;
+}
+
+.advisor-selector-card p {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 13px;
+
+  max-width: 430px;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color:
+    rgba(255, 255, 255, 0.46);
+}
+
+.advisor-selector-enter {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 20px;
+
+  color:
+    rgba(255, 255, 255, 0.21);
+
+  font-size: 8px;
+
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   ADVISOR WORKSPACE
+============================================================ */
+
+.advisor-workspace {
+  width: 100%;
+
+  max-width: 1500px;
+
+  min-height:
+    calc(100vh - 114px);
+
+  display: grid;
+
+  grid-template-columns:
+    270px
+    minmax(0, 1fr);
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(4, 4, 11, 0.74);
+
+  backdrop-filter:
+    blur(30px);
+
+  -webkit-backdrop-filter:
+    blur(30px);
+
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.38);
+}
+
+.advisor-workspace-purple {
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.38),
+    0 0 70px
+    rgba(132, 74, 255, 0.035);
+}
+
+.advisor-workspace-pink {
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.38),
+    0 0 70px
+    rgba(198, 79, 255, 0.03);
+}
+
+.advisor-workspace-blue {
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.38),
+    0 0 70px
+    rgba(61, 123, 255, 0.035);
+}
+
+.advisor-workspace-cyan {
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.38),
+    0 0 70px
+    rgba(56, 192, 255, 0.03);
+}
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.advisor-workspace-sidebar {
+  min-height: 100%;
+
+  padding:
+    27px
+    22px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.006)
+    );
+}
+
+.active-advisor-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 3px;
+}
+
+.active-advisor-brand-mark {
+  width: 48px;
+  height: 48px;
+
+  min-width: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.active-advisor-brand-purple {
+  color: #dac6ff;
+
+  border:
+    1px solid
+    rgba(166, 122, 255, 0.17);
+
+  background:
+    rgba(130, 77, 255, 0.1);
+
+  box-shadow:
+    0 0 25px
+    rgba(136, 77, 255, 0.09);
+}
+
+.active-advisor-brand-pink {
+  color: #efccff;
+
+  border:
+    1px solid
+    rgba(211, 126, 255, 0.16);
+
+  background:
+    rgba(191, 76, 255, 0.09);
+
+  box-shadow:
+    0 0 25px
+    rgba(198, 76, 255, 0.08);
+}
+
+.active-advisor-brand-blue {
+  color: #c9deff;
+
+  border:
+    1px solid
+    rgba(94, 158, 255, 0.17);
+
+  background:
+    rgba(62, 122, 255, 0.09);
+
+  box-shadow:
+    0 0 25px
+    rgba(61, 126, 255, 0.08);
+}
+
+.active-advisor-brand-cyan {
+  color: #c8f5ff;
+
+  border:
+    1px solid
+    rgba(88, 212, 255, 0.16);
+
+  background:
+    rgba(60, 183, 255, 0.08);
+
+  box-shadow:
+    0 0 25px
+    rgba(57, 194, 255, 0.07);
+}
+
+.active-advisor-brand
+> div:last-child {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.active-advisor-brand strong {
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 12px;
+
+  line-height: 1.3;
+
+  font-weight: 600;
+}
+
+.active-advisor-brand span {
+  color:
+    rgba(255, 255, 255, 0.2);
+
+  font-size: 7px;
+
+  letter-spacing: 0.12em;
+}
+
+.advisor-sidebar-section {
+  margin-top: 34px;
+}
+
+.advisor-sidebar-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.17);
+
+  font-size: 7px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.19em;
+}
+
+.advisor-sidebar-button {
+  width: 100%;
+
+  margin-bottom: 5px;
+
+  padding:
+    11px
+    12px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 11px;
+
+  background:
+    transparent;
+
+  color:
+    rgba(255, 255, 255, 0.31);
+
+  text-align: left;
+
+  font-size: 10px;
+}
+
+.advisor-sidebar-button-active {
+  color:
+    rgba(235, 225, 255, 0.83);
+
+  border-color:
+    rgba(151, 112, 255, 0.08);
+
+  background:
+    rgba(126, 78, 255, 0.055);
+}
+
+.advisor-context-card {
+  padding: 14px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.016);
+}
+
+.advisor-context-card > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.56);
+
+  font-size: 9px;
+}
+
+.advisor-context-card p {
+  margin:
+    9px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.23);
+
+  font-size: 8px;
+
+  line-height: 1.65;
+}
+
+.advisor-specialty-copy {
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, 0.27);
+
+  font-size: 9px;
+
+  line-height: 1.7;
+}
+
+/* BEXKA INTEGRAL BUTTON */
+
+.switch-to-integral {
+  width: 100%;
+
+  margin-top: 32px;
+
+  padding: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border:
+    1px solid
+    rgba(156, 116, 255, 0.08);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(132, 78, 255, 0.055),
+      rgba(59, 104, 255, 0.025)
+    );
+
+  color: white;
+
+  text-align: left;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.switch-to-integral:hover {
+  border-color:
+    rgba(169, 129, 255, 0.18);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(132, 78, 255, 0.09),
+      rgba(59, 104, 255, 0.04)
+    );
+}
+
+.switch-to-integral img {
+  filter:
+    drop-shadow(
+      0 0 10px
+      rgba(164, 101, 255, 0.38)
+    );
+}
+
+.switch-to-integral div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.switch-to-integral strong {
+  font-size: 9px;
+
+  font-weight: 550;
+}
+
+.switch-to-integral span {
+  color:
+    rgba(255, 255, 255, 0.2);
+
+  font-size: 6px;
+}
+
+.advisor-sidebar-version {
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  color:
+    rgba(255, 255, 255, 0.1);
+
+  font-size: 6px;
+
+  letter-spacing: 0.11em;
+}
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.advisor-workspace-main {
+  min-width: 0;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 20%,
+      rgba(102, 59, 255, 0.055),
+      transparent 42%
+    );
+}
+
+/* ============================================================
+   EMPTY STATE
+============================================================ */
+
+.advisor-empty-state {
+  width:
+    min(760px, 86%);
+
+  margin: auto;
+
+  padding:
+    55px
+    0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.advisor-hero-mark {
+  position: relative;
+
+  width: 115px;
+  height: 115px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 34px;
+
+  font-size: 28px;
+
+  font-weight: 650;
+}
+
+.advisor-hero-mark > span {
+  position: relative;
+
+  z-index: 3;
+}
+
+.advisor-hero-aura {
+  position: absolute;
+
+  width: 130px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  filter: blur(27px);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(184, 111, 255, 0.28),
+      rgba(77, 91, 255, 0.1) 55%,
+      transparent 78%
+    );
+}
+
+.advisor-hero-purple {
+  color: #d9c5ff;
+
+  border:
+    1px solid
+    rgba(173, 130, 255, 0.12);
+
+  background:
+    rgba(132, 77, 255, 0.05);
+}
+
+.advisor-hero-pink {
+  color: #f0c9ff;
+
+  border:
+    1px solid
+    rgba(215, 127, 255, 0.12);
+
+  background:
+    rgba(190, 78, 255, 0.045);
+}
+
+.advisor-hero-blue {
+  color: #c7ddff;
+
+  border:
+    1px solid
+    rgba(95, 160, 255, 0.12);
+
+  background:
+    rgba(61, 121, 255, 0.045);
+}
+
+.advisor-hero-cyan {
+  color: #c9f4ff;
+
+  border:
+    1px solid
+    rgba(94, 214, 255, 0.12);
+
+  background:
+    rgba(59, 184, 255, 0.04);
+}
+
+.advisor-workspace-kicker {
+  display: block;
+
+  margin-top: 20px;
+
+  font-size: 8px;
+
+  font-weight: 650;
+
+  letter-spacing: 0.24em;
+}
+
+.advisor-kicker-purple {
+  color:
+    rgba(191, 158, 255, 0.66);
+}
+
+.advisor-kicker-pink {
+  color:
+    rgba(221, 158, 255, 0.64);
+}
+
+.advisor-kicker-blue {
+  color:
+    rgba(158, 195, 255, 0.64);
+}
+
+.advisor-kicker-cyan {
+  color:
+    rgba(155, 225, 255, 0.62);
+}
+
+.advisor-empty-state h1 {
+  margin:
+    13px
+    0
+    0;
+
+  color: white;
+
+  font-size:
+    clamp(44px, 4.4vw, 64px);
+
+  font-weight: 570;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+}
+
+.advisor-workspace-intro {
+  max-width: 580px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.39);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+/* ============================================================
+   ADVISOR COMPOSER
+============================================================ */
+
+.advisor-composer {
+  width: 100%;
+
+  margin-top: 30px;
+
+  padding: 17px;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.09);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  backdrop-filter:
+    blur(20px);
+
+  -webkit-backdrop-filter:
+    blur(20px);
+
+  box-shadow:
+    0 22px 65px
+    rgba(0, 0, 0, 0.25);
+}
+
+.advisor-composer textarea {
+  display: block;
+
+  width: 100%;
+
+  min-height: 125px;
+
+  resize: none;
+
+  padding: 5px;
+
+  border: 0;
+
+  outline: 0;
+
+  background:
+    transparent;
+
+  color:
+    rgba(255, 255, 255, 0.92);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.advisor-composer textarea::placeholder {
+  color:
+    rgba(255, 255, 255, 0.19);
+}
+
+.advisor-composer-footer {
+  padding-top: 13px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.advisor-context-indicator {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color:
+    rgba(255, 255, 255, 0.26);
+
+  font-size: 9px;
+}
+
+.advisor-send-button {
+  min-width: 110px;
+
+  height: 42px;
+
+  padding:
+    0
+    19px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.advisor-send-button:hover {
+  transform:
+    translateY(-2px);
+}
+
+.advisor-send-purple {
+  background:
+    linear-gradient(
+      135deg,
+      #975fff,
+      #6e55ff
+    );
+
+  box-shadow:
+    0 9px 28px
+    rgba(118, 75, 255, 0.24);
+}
+
+.advisor-send-pink {
+  background:
+    linear-gradient(
+      135deg,
+      #bc5cff,
+      #8555ff
+    );
+
+  box-shadow:
+    0 9px 28px
+    rgba(185, 78, 255, 0.22);
+}
+
+.advisor-send-blue {
+  background:
+    linear-gradient(
+      135deg,
+      #6577ff,
+      #3b91ff
+    );
+
+  box-shadow:
+    0 9px 28px
+    rgba(61, 119, 255, 0.23);
+}
+
+.advisor-send-cyan {
+  background:
+    linear-gradient(
+      135deg,
+      #488cff,
+      #42c7e8
+    );
+
+  box-shadow:
+    0 9px 28px
+    rgba(62, 175, 255, 0.21);
+}
+
+/* ============================================================
+   ANALYSIS
+============================================================ */
+
+.advisor-analysis {
+  width:
+    min(900px, 90%);
+
+  margin:
+    0
+    auto;
+
+  padding:
+    45px
+    0
+    65px;
+}
+
+.advisor-analysis-header {
+  margin-bottom: 25px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.advisor-analysis-header
+.advisor-workspace-kicker {
+  margin-top: 0;
+}
+
+.advisor-analysis-header h2 {
+  margin:
+    7px
+    0
+    0;
+
+  color: white;
+
+  font-size: 36px;
+
+  font-weight: 550;
+
+  letter-spacing: -0.045em;
+}
+
+/* USER QUESTION */
+
+.advisor-user-question {
+  padding:
+    19px
+    21px;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+.advisor-user-question > span {
+  color:
+    rgba(255, 255, 255, 0.2);
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+}
+
+.advisor-user-question p {
+  margin:
+    10px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.7);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* RESPONSE */
+
+.advisor-response {
+  margin-top: 17px;
+
+  padding: 27px;
+
+  border-radius: 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.026),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 0, 0, 0.22);
+}
+
+.advisor-response-purple {
+  border:
+    1px solid
+    rgba(158, 116, 255, 0.15);
+}
+
+.advisor-response-pink {
+  border:
+    1px solid
+    rgba(207, 115, 255, 0.14);
+}
+
+.advisor-response-blue {
+  border:
+    1px solid
+    rgba(88, 158, 255, 0.14);
+}
+
+.advisor-response-cyan {
+  border:
+    1px solid
+    rgba(82, 206, 255, 0.14);
+}
+
+.advisor-response-header {
+  padding-bottom: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+}
+
+.advisor-response-avatar {
+  width: 43px;
+  height: 43px;
+
+  min-width: 43px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.advisor-response-avatar-purple {
+  color: #d8c5ff;
+
+  background:
+    rgba(132, 78, 255, 0.09);
+}
+
+.advisor-response-avatar-pink {
+  color: #edcaff;
+
+  background:
+    rgba(194, 78, 255, 0.08);
+}
+
+.advisor-response-avatar-blue {
+  color: #c9ddff;
+
+  background:
+    rgba(62, 127, 255, 0.08);
+}
+
+.advisor-response-avatar-cyan {
+  color: #c9f4ff;
+
+  background:
+    rgba(59, 187, 255, 0.07);
+}
+
+.advisor-response-header
+> div:nth-child(2) {
+  flex: 1;
+}
+
+.advisor-response-header strong {
+  display: block;
+
+  color:
+    rgba(255, 255, 255, 0.88);
+
+  font-size: 12px;
+}
+
+.advisor-response-header
+> div:nth-child(2)
+span {
+  display: block;
+
+  margin-top: 4px;
+
+  color:
+    rgba(255, 255, 255, 0.2);
+
+  font-size: 8px;
+}
+
+.advisor-demo-chip {
+  margin-left: auto;
+}
+
+.advisor-response-section {
+  padding-top: 23px;
+}
+
+.advisor-response-section
+> span {
+  color:
+    rgba(182, 150, 255, 0.53);
+
+  font-size: 8px;
+
+  letter-spacing: 0.2em;
+}
+
+.advisor-response-section p {
+  max-width: 760px;
+
+  margin:
+    10px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.advisor-response-section h3 {
+  max-width: 760px;
+
+  margin:
+    10px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.86);
+
+  font-size: 27px;
+
+  font-weight: 520;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.03em;
+}
+
+.advisor-next-steps {
+  margin-top: 14px;
+
+  display: grid;
+
+  gap: 8px;
+}
+
+.advisor-next-steps div {
+  min-height: 47px;
+
+  padding:
+    13px
+    15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.019);
+
+  color:
+    rgba(255, 255, 255, 0.46);
+
+  font-size: 11px;
+
+  line-height: 1.6;
+}
+
+.advisor-next-steps b {
+  color:
+    rgba(184, 151, 255, 0.5);
+
+  font-size: 9px;
+}
+
+/* ============================================================
+   CROSS-ADVISOR CONSULTATION
+============================================================ */
+
+.advisor-consultation-card {
+  margin-top: 17px;
+
+  padding: 24px;
+
+  border-radius: 21px;
+
+  border:
+    1px solid
+    rgba(177, 140, 255, 0.12);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(130, 78, 255, 0.035),
+      rgba(255, 255, 255, 0.014)
+    );
+}
+
+.consultation-heading
+> span {
+  color:
+    rgba(189, 159, 255, 0.5);
+
+  font-size: 8px;
+
+  letter-spacing: 0.19em;
+}
+
+.consultation-heading h3 {
+  margin:
+    8px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.86);
+
+  font-size: 21px;
+
+  font-weight: 530;
+
+  letter-spacing: -0.025em;
+}
+
+.advisor-consultation-card
+> p {
+  max-width: 720px;
+
+  margin:
+    12px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+}
+
+.consultation-actions {
+  margin-top: 18px;
+
+  display: flex;
+
+  gap: 9px;
+
+  flex-wrap: wrap;
+}
+
+.consultation-actions button {
+  min-height: 38px;
+
+  padding:
+    0
+    15px;
+
+  border-radius: 11px;
+
+  font-size: 9px;
+}
+
+.consultation-accept {
+  border:
+    1px solid
+    rgba(174, 137, 255, 0.15);
+
+  background:
+    rgba(132, 80, 255, 0.1);
+
+  color:
+    rgba(231, 219, 255, 0.8);
+}
+
+.consultation-decline {
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.055);
+
+  background:
+    rgba(255, 255, 255, 0.016);
+
+  color:
+    rgba(255, 255, 255, 0.3);
+}
+
+/* CONSULTED ADVISOR */
+
+.consulted-advisor-card {
+  margin-top: 17px;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+
+  background:
+    rgba(255, 255, 255, 0.016);
+}
+
+.consulted-label {
+  color:
+    rgba(176, 145, 255, 0.48);
+
+  font-size: 7px;
+
+  letter-spacing: 0.19em;
+}
+
+.consulted-advisor-heading {
+  margin-top: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.consulted-advisor-avatar {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 9px;
+
+  font-weight: 650;
+}
+
+.consulted-purple {
+  color: #dac7ff;
+  background:
+    rgba(132, 79, 255, 0.09);
+}
+
+.consulted-pink {
+  color: #edcaff;
+  background:
+    rgba(192, 78, 255, 0.08);
+}
+
+.consulted-blue {
+  color: #c8ddff;
+  background:
+    rgba(60, 127, 255, 0.08);
+}
+
+.consulted-cyan {
+  color: #c9f4ff;
+  background:
+    rgba(58, 187, 255, 0.07);
+}
+
+.consulted-advisor-heading
+strong {
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-size: 11px;
+}
+
+.consulted-advisor-card p {
+  margin:
+    12px
+    0
+    0;
+
+  color:
+    rgba(255, 255, 255, 0.39);
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+/* ============================================================
+   FOLLOWUP
+============================================================ */
+
+.advisor-followup {
+  width: 100%;
+
+  margin-top: 16px;
+
+  padding: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  border-radius: 15px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.02);
+}
+
+.advisor-followup input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 37px;
+
+  padding:
+    0
+    11px;
+
+  border: 0;
+
+  outline: 0;
+
+  background:
+    transparent;
+
+  color: white;
+
+  font-size: 11px;
+}
+
+.advisor-followup input::placeholder {
+  color:
+    rgba(255, 255, 255, 0.18);
+}
+
+.advisor-followup button {
+  height: 37px;
+
+  padding:
+    0
+    18px;
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(158, 119, 255, 0.1);
+
+  background:
+    rgba(130, 79, 255, 0.09);
+
+  color:
+    rgba(230, 219, 255, 0.72);
+
+  font-size: 9px;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1000px) {
+  .advisor-workspace {
+    grid-template-columns:
+      220px
+      minmax(0, 1fr);
+  }
+
+  .advisor-workspace-sidebar {
+    padding:
+      24px
+      18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .advisor-workspace {
+    display: block;
+
+    min-height:
+      calc(100vh - 95px);
+
+    border-radius: 20px;
+  }
+
+  .advisor-workspace-sidebar {
+    display: none;
+  }
+
+  .advisor-workspace-main {
+    min-height:
+      calc(100vh - 95px);
+  }
+
+  .advisor-empty-state {
+    width: 90%;
+
+    padding:
+      38px
+      0;
+  }
+
+  .advisor-hero-mark {
+    width: 95px;
+    height: 95px;
+  }
+
+  .advisor-empty-state h1 {
+    font-size:
+      clamp(38px, 10vw, 54px);
+  }
+
+  .advisor-workspace-intro {
+    font-size: 11px;
+  }
+
+  .advisor-composer textarea {
+    font-size: 13px;
+  }
+
+  .advisor-analysis {
+    width: 90%;
+
+    padding:
+      32px
+      0
+      45px;
+  }
+
+  .advisor-analysis-header {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+  }
+
+  .advisor-analysis-header h2 {
+    font-size: 29px;
+  }
+
+  .advisor-response-section h3 {
+    font-size: 23px;
+  }
+
+  .consultation-actions {
+    flex-direction:
+      column;
+  }
+
+  .consultation-actions button {
+    width: 100%;
+  }
+}
